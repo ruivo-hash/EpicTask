@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://thymeleaf.org">
+
+<head th:include="_template :: head"></head>
+<body>
+
+	<h1>Epic Task</h1>
+	
+	<div th:if="${param.error}" class="alert error">
+		<h2>Um erro aconteceu</h2>
+		<p th:text="${message}"></p>
+	</div>
+
+</body>
+</html>
