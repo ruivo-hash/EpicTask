@@ -1,9 +1,5 @@
 package br.com.fiap.epictask.controller.api;
 
-import java.net.URI;
-
-import javax.validation.Valid;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
@@ -22,43 +18,42 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponentsBuilder;
 
-import br.com.fiap.epictask.model.Task;
-import br.com.fiap.epictask.service.ApiTaskService;
+import br.com.fiap.epictask.model.User;
+import br.com.fiap.epictask.service.ApiUserService;
 
 @RestController
-@RequestMapping("/api/task")
-public class ApiTaskController {
-	
+@RequestMapping("/api/user")
+public class ApiUserController {
+
 	@Autowired
-	private ApiTaskService service;
+	private ApiUserService service;
 	
-	@GetMapping()
-	@Cacheable("tasks")
-	public Page<Task> index(@RequestParam(required = false) String title, @PageableDefault(size = 20) Pageable pageable){
-		return service.getTasks(title, pageable);
+	@GetMapping
+	@Cacheable("users")
+	public Page<User> index(@RequestParam(required = false) String name, @PageableDefault(size = 20) Pageable pageable) {
+		return service.getUsers(name, pageable);
 	}
 	
 	@GetMapping("{id}")
-	public ResponseEntity<Task>  get(@PathVariable Long id) {
-		return ResponseEntity.of(service.getTask(id));
+	public ResponseEntity<User> get(@PathVariable Long id) {
+		return service.getUser(id);
 	}
 	
-	@PostMapping()
-	@CacheEvict(value = "tasks", allEntries = true)
-	public ResponseEntity<Task> create(@RequestBody @Valid Task task, UriComponentsBuilder uriBuilder) {
-		URI uri = service.postTask(task, uriBuilder);
-		return ResponseEntity.created(uri).build();
+	@PostMapping
+	@CacheEvict(value = "users", allEntries = true)
+	public ResponseEntity<User> create(@RequestBody User user, UriComponentsBuilder uriBuilder) {
+		return service.postUser(user, uriBuilder);
 	}
 	
 	@PutMapping("{id}")
-	@CacheEvict(value = "tasks", allEntries = true)
-	public ResponseEntity<Task> update(@RequestBody @Valid Task newTask, @PathVariable Long id){
-		return service.putTask(newTask, id);
+	@CacheEvict(value = "users", allEntries = true)
+	public ResponseEntity<User> update(@PathVariable Long id, @RequestBody User newUser){
+		return service.putUser(id, newUser);
 	}
 	
 	@DeleteMapping("{id}")
-	@CacheEvict(value = "tasks", allEntries = true)
-	public ResponseEntity<Task> delete(@PathVariable Long id){
-		return service.deleteTask(id);
+	@CacheEvict(value = "users", allEntries = true)
+	public ResponseEntity<User> delete(@PathVariable Long id){
+		return service.deleteUser(id);
 	}
 }

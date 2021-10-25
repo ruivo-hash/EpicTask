@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+
+<head th:include="_template :: head"></head>
+
+<body>
+
+	<header th:include="_template :: header"></header>
+	
+	<div class="card">
+		<nav th:include="_template :: menu('task')"></nav>
+		<a href="/task/new" class="button primary action">
+			<span class="material-icons">
+				add_circle_outline
+			</span>
+			<span th:text="#{label.newtask}"></span>
+		</a>
+		
+		<div class="tasks">
+			<div class="card task" th:each="task : ${tasks}">
+				<div>
+					<h3 th:text="${task.title}"></h3>
+					<span th:text="${task.points}+'pts'"></span>
+				</div>
+				<p th:text="${task.description}"></p>
+				<meter min="0" max="100" th:value="${task.status}"></meter>
+				
+				<div class="task-actions">	
+					<span>
+						<img
+							th:title="${task.user.name}"
+							th:if="${task.user != null}"
+							class="avatar" 
+							th:alt="${'avatar do usuário ' + task.user.name}" 
+							th:src="${task.user.avatarUrl}">
+					</span>				
+				</div>
+			</div>	
+		</div>
+	</div>
+</body>
+</html>

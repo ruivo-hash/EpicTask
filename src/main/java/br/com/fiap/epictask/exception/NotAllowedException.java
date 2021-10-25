@@ -1,4 +1,4 @@
-package br.com.fiap.epictask.controller;
+package br.com.fiap.epictask.exception;
 
 public class NotAllowedException extends RuntimeException {
 

@@ -11,6 +11,16 @@
 	
 	<div class="card">
 		<nav th:include="_template :: menu('task')"></nav> <!-- fragment('param') -> param é o nome da página -->
+		
+		<a href="/task/completed" class="button primary action">
+			<span class="material-icons">
+				add_circle_outline
+			</span>
+			<span th:text="#{label.completedtask}"></span>
+		</a>
+		
+		<p></p>
+		
 		<a href="/task/new" class="button primary action">
 			<span class="material-icons">
 				add_circle_outline

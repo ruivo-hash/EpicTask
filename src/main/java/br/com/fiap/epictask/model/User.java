@@ -43,6 +43,8 @@ public class User implements UserDetails {
 	
 	@Min(value = 18, message = "{user.age.min}")
 	private int age;
+	
+	private int points;
 
 	@ManyToMany(fetch = FetchType.EAGER)
 	private Collection<Role> roles;

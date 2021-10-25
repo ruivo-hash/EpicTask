@@ -9,13 +9,16 @@
 		<h2 th:text="#{label.createuser}"></h2>
 		
 		<form th:action="@{/user}" method="post" th:object="${user}">
+		
+			<input type="hidden" name="id" th:field="*{id}"/>
+			
 			<label th:text="#{user.name}" for="name"></label>
 			<input 
 				type="text" 
-				name="name" 
-				id="name" 
+				name="name"
+				id="name"
 				th:field="*{name}"
-				th:classappend="${#fields.hasErrors('name')}?invalid"			 
+				th:classappend="${#fields.hasErrors('name')}?invalid"
 			/>
 			<span class="error" th:errors="*{name}"></span>
 			
@@ -54,7 +57,7 @@
 				th:classappend="${#fields.hasErrors('password')}?invalid"			 
 			/>
 			<span class="error"  th:errors="*{password}"></span>
-			
+
 			<div class="buttons">
 				<a th:text="#{button.cancel}" href="/user" class="button"></a>
 				<button th:text="#{button.save}" class="button primary"></button>

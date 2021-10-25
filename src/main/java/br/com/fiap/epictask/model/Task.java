@@ -1,5 +1,6 @@
 package br.com.fiap.epictask.model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -34,7 +35,7 @@ public class Task {
 	@Max(value = 100, message = "{task.status.max}")
 	private int status;
 	
-	@ManyToOne
+	@ManyToOne(cascade = {CascadeType.MERGE, CascadeType.REFRESH})
 	private User user;
 
 }

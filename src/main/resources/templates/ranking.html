@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+
+<head th:include="_template :: head"></head>
+
+<body>
+
+	<header th:include="_template :: header"></header>
+	
+	<div class="card">
+		<nav th:include="_template :: menu('ranking')"></nav>
+
+		<main class="content">
+			<div class="user" th:each="user : ${users}">
+				<img class="avatar" alt="" th:src="${user.avatarUrl}" />
+				<div class="user-info">
+					<h4 th:text="${user.name}"></h4>
+					<p th:text="${'Pontuação: ' + user.points}"></p>
+				</div>
+			</div>
+		</main>
+	</div>
+
+</body>
+</html>

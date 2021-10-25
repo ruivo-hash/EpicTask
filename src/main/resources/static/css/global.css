@@ -86,6 +86,10 @@ button.icon,
     padding: .5rem;
 }
 
+.espacamento{
+	padding: 8;
+}
+
 .action {
     align-self: flex-end;
     margin-right: 2rem;

@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.RestController;
 import br.com.fiap.epictask.model.Login;
 import br.com.fiap.epictask.service.TokenService;
 
-
 @RestController
 public class AuthenticationController {
 	
