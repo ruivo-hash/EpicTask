@@ -46,8 +46,7 @@ public class ApiTaskController {
 	@PostMapping()
 	@CacheEvict(value = "tasks", allEntries = true)
 	public ResponseEntity<Task> create(@RequestBody @Valid Task task, UriComponentsBuilder uriBuilder) {
-		URI uri = service.postTask(task, uriBuilder);
-		return ResponseEntity.created(uri).build();
+		return service.postTask(task, uriBuilder);
 	}
 	
 	@PutMapping("{id}")
