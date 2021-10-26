@@ -1,7 +1,7 @@
 # EpicTask
 Aplicação WEB para gerenciamento de tarefas gamificado, utilizando Java e SpringBoot e desenvolvimento de APIs para requisições
 
-#Integrantes
+# Integrantes
 CARLOS AUGUSTO SAKITANI - RM85903
 FELIPE JESUS KARIMATA - RM84912
 FERNANDA EIKO KINOSHITA  - RM84668
