@@ -10,7 +10,7 @@
 	<div class="alert" th:if="${message != null}" th:text="${message}"></div>
 	
 	<div class="card">
-		<nav th:include="_template :: menu('task')"></nav> <!-- fragment('param') -> param é o nome da página -->
+		<nav th:include="_template :: menu('task')"></nav> <!-- fragment('param') -> param Ã© o nome da pÃ¡gina -->
 		
 		<a href="/task/completed" class="button primary action">
 			<span class="material-icons">
@@ -43,7 +43,7 @@
 							th:title="${task.user.name}"
 							th:if="${task.user != null}"
 							class="avatar" 
-							th:alt="${'avatar do usu�rio ' + task.user.name}" 
+							th:alt="${'avatar do usuário ' + task.user.name}" 
 							th:src="${task.user.avatarUrl}">
 					</span>				
 					<a 

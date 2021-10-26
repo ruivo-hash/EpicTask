@@ -37,7 +37,11 @@ INSERT INTO user_roles VALUES
 
 INSERT INTO user (name, email, age, password, githubuser, points) VALUES
 	('Mateus Balduino', 'mateus@gmail.com', 20, '$2a$10$wwSLR/hBZDJD53S6LZt/mej..NsXdfVr9SrB37yEERPspbRIWPi.O', 'ruivo-hash', 2500),
+<<<<<<< HEAD
 	('Prof Joao', 'admin@fiap.com.br', 20, '$2a$10$sbcuK4icSW1ghOmVmZFCnuhKc.6dywY5uNZnxwNVhst8uPY7D2V/G', 'joaocarloslima', 2500),
+=======
+	('Prof João', 'admin@fiap.com.br', 20, '$2a$10$sbcuK4icSW1ghOmVmZFCnuhKc.6dywY5uNZnxwNVhst8uPY7D2V/G', 'joaocarloslima', 2500),
+>>>>>>> 6e81a79caf949aa79cfd1d591b0ac71583edae84
 	('Ana Komase', 'ana@gmail.com', 20, '$2a$10$wwSLR/hBZDJD53S6LZt/mej..NsXdfVr9SrB37yEERPspbRIWPi.O', 'AnaKomase', 4500),
 	('Igo Jeferson', 'igo@fiap.com.br', 28, '$2a$10$wwSLR/hBZDJD53S6LZt/mej..NsXdfVr9SrB37yEERPspbRIWPi.O', 'IgoJeferson', 3300);
 
