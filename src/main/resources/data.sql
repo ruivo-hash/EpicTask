@@ -32,7 +32,8 @@ INSERT INTO role (name) VALUES
 	('ROLE_USER');
 
 INSERT INTO user_roles VALUES 
-	(1, 1);
+	(1, 1),
+	(2, 1);
 
 INSERT INTO user (name, email, age, password, githubuser, points) VALUES
 	('Mateus Balduino', 'mateus@gmail.com', 20, '$2a$10$wwSLR/hBZDJD53S6LZt/mej..NsXdfVr9SrB37yEERPspbRIWPi.O', 'ruivo-hash', 2500),
