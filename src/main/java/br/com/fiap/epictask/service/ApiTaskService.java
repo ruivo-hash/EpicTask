@@ -26,12 +26,14 @@ public class ApiTaskService {
 		
 		return repository.findByTitleLike("%" + title + "%", pageable);
 	}
-	public Optional<Task> getTask(Long id) {
-		return repository.findById(id);
+	public ResponseEntity<Task> getTask(Long id) {
+		 Task task = repository.findById(id).get();
+		 return ResponseEntity.ok(task);
 	}
-	public URI postTask(Task task, UriComponentsBuilder uriBuilder) {
+	public ResponseEntity<Task> postTask(Task task, UriComponentsBuilder uriBuilder) {
 		repository.save(task);
-		return uriBuilder.path("/api/task/{id}").buildAndExpand(task.getId()).toUri();
+		URI uri = uriBuilder.path("/api/task/{id}").buildAndExpand(task.getId()).toUri();
+		return ResponseEntity.created(uri).build();
 	}
 	public ResponseEntity<Task> putTask(Task newTask, @PathVariable Long id){
 		Optional<Task> optional = repository.findById(id);

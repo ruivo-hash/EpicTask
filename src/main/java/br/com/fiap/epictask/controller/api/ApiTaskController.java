@@ -40,14 +40,13 @@ public class ApiTaskController {
 	
 	@GetMapping("{id}")
 	public ResponseEntity<Task>  get(@PathVariable Long id) {
-		return ResponseEntity.of(service.getTask(id));
+		return service.getTask(id);
 	}
 	
 	@PostMapping()
 	@CacheEvict(value = "tasks", allEntries = true)
 	public ResponseEntity<Task> create(@RequestBody @Valid Task task, UriComponentsBuilder uriBuilder) {
-		URI uri = service.postTask(task, uriBuilder);
-		return ResponseEntity.created(uri).build();
+		return service.postTask(task, uriBuilder);
 	}
 	
 	@PutMapping("{id}")
