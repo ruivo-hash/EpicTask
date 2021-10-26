@@ -32,10 +32,12 @@ INSERT INTO role (name) VALUES
 	('ROLE_USER');
 
 INSERT INTO user_roles VALUES 
-	(1, 1);
+	(1, 1),
+	(2, 1);
 
 INSERT INTO user (name, email, age, password, githubuser, points) VALUES
 	('Mateus Balduino', 'mateus@gmail.com', 20, '$2a$10$wwSLR/hBZDJD53S6LZt/mej..NsXdfVr9SrB37yEERPspbRIWPi.O', 'ruivo-hash', 2500),
+	('Prof Joao', 'admin@fiap.com.br', 20, '$2a$10$sbcuK4icSW1ghOmVmZFCnuhKc.6dywY5uNZnxwNVhst8uPY7D2V/G', 'joaocarloslima', 2500),
 	('Ana Komase', 'ana@gmail.com', 20, '$2a$10$wwSLR/hBZDJD53S6LZt/mej..NsXdfVr9SrB37yEERPspbRIWPi.O', 'AnaKomase', 4500),
 	('Igo Jeferson', 'igo@fiap.com.br', 28, '$2a$10$wwSLR/hBZDJD53S6LZt/mej..NsXdfVr9SrB37yEERPspbRIWPi.O', 'IgoJeferson', 3300);
 
