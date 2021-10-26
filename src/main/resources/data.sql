@@ -42,9 +42,9 @@ INSERT INTO user (name, email, age, password, githubuser, points) VALUES
 	('Igo Jeferson', 'igo@fiap.com.br', 28, '$2a$10$wwSLR/hBZDJD53S6LZt/mej..NsXdfVr9SrB37yEERPspbRIWPi.O', 'IgoJeferson', 3300);
 
 INSERT INTO task (title, description, points, status, user_id) VALUES 
-	('Criar banco de dados','Criar um banco de dados na nuvem com Oracle', 200, 10, 1),
-	('API REST','Publicação de API com endpoints da aplicação', 150, 90, 2);
+	('Criar banco de dados','Criar um banco de dados na nuvem com Oracle', 200, 10, 1);
 INSERT INTO task (title, description, points, status) VALUES 
+	('API REST','Publicação de API com endpoints da aplicação', 150, 90),
 	('Protótipo','Criação de protótipo de alta fidelidade', 100, 50),
 	('Criar frontend','Criar frontend da aplicação', 200, 100),
 	('Criar backend','Criar frontend da aplicação com java', 150, 100);
