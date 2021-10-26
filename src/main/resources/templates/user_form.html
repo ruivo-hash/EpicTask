@@ -48,17 +48,13 @@
 			/>
 			<span class="error" th:errors="*{age}"></span>
 
-<<<<<<< HEAD
-			<label  th:if="${id == null}" th:text="#{user.password}" for="password"></label>
-=======
-			<label th:if="${id == null}" th:text="#{user.password}" for="password"></label>
->>>>>>> 6e81a79caf949aa79cfd1d591b0ac71583edae84
+			<label  th:text="#{user.password}" for="password"></label>
 			<input 
 				type="password" 
 				name="password" 
 				id="password" 
 				th:field="*{password}"
-				th:if="${id == null}"
+				
 				th:classappend="${#fields.hasErrors('password')}?invalid"			 
 			/>
 			<span class="error"  th:errors="*{password}"></span>

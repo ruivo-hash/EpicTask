@@ -42,8 +42,8 @@ public class UserService {
 
 	public boolean saveUser(User user, BindingResult result, RedirectAttributes redirect) {
 		if(result.hasErrors()) return false;
-		user.setPassword(AuthenticationService.getPasswordEncoder().encode(user.getPassword()));
 		if(user.getId() == null) {
+			user.setPassword(AuthenticationService.getPasswordEncoder().encode(user.getPassword()));
 			repository.save(user);
 			redirect.addFlashAttribute("message", messages.getMessage("user.new.sucess", null, LocaleContextHolder.getLocale()));
 		}else {
